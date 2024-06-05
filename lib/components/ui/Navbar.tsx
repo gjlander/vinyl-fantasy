@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Navbar = () => {
     return (
         <div className='navbar bg-base-100 sticky top-0'>
@@ -51,13 +53,13 @@ const Navbar = () => {
             <div className='navbar-center hidden lg:flex'>
                 <ul className='menu menu-horizontal px-1'>
                     <li>
-                        <a>Home</a>
+                        <Link href='/'>Home</Link>
                     </li>
                     <li>
-                        <a>New</a>
+                        <Link href='/albums'>New</Link>
                     </li>
                     <li>
-                        <a>Browse</a>
+                        <Link href='/albums'>Browse</Link>
                     </li>
                 </ul>
                 <div className='form-control'>

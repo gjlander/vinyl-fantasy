@@ -1,0 +1,5 @@
+// namespace components {
+//     type AlbumCardProps = {
+
+//     };
+// }

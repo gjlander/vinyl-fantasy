@@ -1,4 +1,6 @@
+import { allAlbums } from '@/lib/data';
+import { AlbumGrid } from '@/lib/components';
 const Albums = () => {
-    return <div>All albums search page</div>;
+    return <AlbumGrid albums={allAlbums} />;
 };
 export default Albums;

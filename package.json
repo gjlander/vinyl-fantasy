@@ -10,6 +10,7 @@
         "seed": "node -r dotenv/config ./scripts/seed.js dotenv_config_path=./.env.local"
     },
     "dependencies": {
+        "@prisma/client": "^5.15.0",
         "@vercel/postgres": "^0.8.0",
         "next": "14.3.0-canary.59",
         "pg": "^8.12.0",

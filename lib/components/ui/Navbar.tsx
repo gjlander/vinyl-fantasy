@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
     return (
-        <div className='navbar bg-base-100 sticky top-0'>
+        <div className='navbar bg-base-100 sticky top-0 z-30'>
             <div className='navbar-start'>
                 <div className='dropdown'>
                     <div

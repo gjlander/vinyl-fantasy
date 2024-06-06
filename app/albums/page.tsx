@@ -1,6 +1,5 @@
-import { allAlbums } from '@/lib/data';
 import { AlbumGrid } from '@/lib/components';
-const Albums = () => {
-    return <AlbumGrid albums={allAlbums} />;
+const Albums = async () => {
+    return <AlbumGrid limit={100} />;
 };
 export default Albums;

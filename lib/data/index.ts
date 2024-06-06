@@ -1,3 +1,3 @@
-import { allAlbums, newArrivals } from './albums';
+import { allAlbums, getAlbums, newArrivals } from './albums';
 
-export { allAlbums, newArrivals };
+export { allAlbums, getAlbums, newArrivals };

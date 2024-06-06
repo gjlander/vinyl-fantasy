@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { getAlbumById } from '@/lib/data';
+import { GenreMap } from '@/lib/components';
+import { Spotify } from 'react-spotify-embed';
 const DEFAULT_IMG = '/assets/blank-profile-picture-g07f413129_640.png';
 
 const Album = async ({ params }: { params: { id: string } }) => {
@@ -19,13 +21,14 @@ const Album = async ({ params }: { params: { id: string } }) => {
         comment,
         img_url,
         format,
+        spotify_url,
     } = album;
     const formattedPrice = price!.toNumber().toFixed(2);
     return (
         <div className='m-5 sm:m-10 md:m-[5em] flex flex-col sm:flex-row justify-center w-100'>
-            <div>
+            <div className='mb-0 h-full sm:sticky sm:top-20 overflow-visible shadow-none bg-transparent'>
                 <Image
-                    className='mb-0 h-full sm:sticky sm:top-20 overflow-visible shadow-none bg-transparent sm:max-h-[250px] md:max-h-[300px] lg:max-h-[450px] xl:max-h-[600px] rounded-xl -z-1'
+                    className='sm:max-h-[250px] md:max-h-[300px] lg:max-h-[450px] xl:max-h-[600px] rounded-xl -z-1'
                     width={450}
                     height={450}
                     src={img_url || DEFAULT_IMG}
@@ -44,7 +47,7 @@ const Album = async ({ params }: { params: { id: string } }) => {
                 <h2 className='text-l'>
                     <i className='font-normal'>{format}</i>
                 </h2>
-                {/* {GenreMap(genre)} */}
+                <GenreMap genres={genre} />
                 <h2 className='text-xl mt-3'>
                     Sleeve: <b className='font-semibold'>{sleeve}</b>
                 </h2>
@@ -92,16 +95,18 @@ const Album = async ({ params }: { params: { id: string } }) => {
                         )} */}
                     </div>
                     {/* <Divider className='my-4' /> */}
-                    <div
-                        className='rounded-xl overflow-hidden'
-                        aria-label='component wrapper'
-                    >
-                        {/* w/o this div, the Spotify player gets ugly white corners in dark mode */}
-                        {/* <Spotify
-                            link={spotifyUrl}
-                            className='w-full h-[600px] shadow-2xl'
-                        /> */}
-                    </div>
+                    {spotify_url && (
+                        <div
+                            className='rounded-xl overflow-hidden'
+                            aria-label='component wrapper'
+                        >
+                            {/* w/o this div, the Spotify player gets ugly white corners in dark mode */}
+                            <Spotify
+                                link={spotify_url}
+                                className='w-full h-[600px] shadow-2xl'
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

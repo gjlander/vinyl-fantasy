@@ -59,8 +59,11 @@ const Album = async ({ params }: { params: { id: string } }) => {
                 </h1>
 
                 <div className='w-full max-w-full sm:max-w-xs md:max-w-full'>
+                    <p>Additional Notes</p>
                     <textarea
-                        // isReadOnly
+                        className='textarea textarea-bordered w-full resize-none'
+                        readOnly
+                        rows={6}
                         // label='Additional notes'
                         // variant='bordered'
                         // labelPlacement='inside'
@@ -70,10 +73,9 @@ const Album = async ({ params }: { params: { id: string } }) => {
                     />
                     <div className='my-4 flex gap-4 justify-center'>
                         <button
-                            color='warning'
                             // variant='shadow'
                             // endContent={<FiShoppingCart />}
-                            className='w-full h-14 text-lg font-semibold active:bg-default-400 active:shadow-default-300 active:text-white '
+                            className='btn btn-warning w-1/2 h-14 text-lg font-semibold active:bg-default-400 active:shadow-default-300 active:text-white '
                         >
                             Add to cart
                         </button>
@@ -82,17 +84,16 @@ const Album = async ({ params }: { params: { id: string } }) => {
                                 id={singleAlbum.sys.id}
                                 setInWishlist={setInWishlist}
                             />
-                        ) : (
-                            <Button
-                                color='warning'
-                                variant='shadow'
-                                startContent={<FiPlus />}
-                                className='w-full h-14 text-lg font-semibold'
-                                onClick={handleAddToWishlist}
-                            >
-                                Add to Wishlist
-                            </Button>
-                        )} */}
+                        ) : ( */}
+                        <button
+                            // variant='shadow'
+                            // startContent={<FiPlus />}
+                            className='btn btn-warning w-1/2 h-14 text-lg font-semibold'
+                            // onClick={handleAddToWishlist}
+                        >
+                            Add to Wishlist
+                        </button>
+                        {/* )} */}
                     </div>
                     {/* <Divider className='my-4' /> */}
                     {spotify_url && (
@@ -101,10 +102,10 @@ const Album = async ({ params }: { params: { id: string } }) => {
                             aria-label='component wrapper'
                         >
                             {/* w/o this div, the Spotify player gets ugly white corners in dark mode */}
-                            <Spotify
+                            {/* <Spotify
                                 link={spotify_url}
                                 className='w-full h-[600px] shadow-2xl'
-                            />
+                            /> */}
                         </div>
                     )}
                 </div>

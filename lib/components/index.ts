@@ -4,4 +4,14 @@ import Footer from './ui/Footer';
 import Hero from './home/Hero';
 import Navbar from './ui/Navbar';
 
-export { AlbumGrid, AlbumCard, Footer, Hero, Navbar };
+import { CardSkeleton, AlbumGridSkeleton } from './ui/skeletons';
+
+export {
+    AlbumGrid,
+    AlbumCard,
+    Footer,
+    Hero,
+    Navbar,
+    CardSkeleton,
+    AlbumGridSkeleton,
+};

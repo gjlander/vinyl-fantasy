@@ -1,4 +1,4 @@
-import { AlbumGrid, Hero } from '@/lib/components';
+import { AlbumGrid, Hero, AlbumGridSkeleton } from '@/lib/components';
 import { Suspense } from 'react';
 export default function Home() {
     // console.log(newArrivals.length);
@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <>
             <Hero />
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<AlbumGridSkeleton length={12} />}>
                 <AlbumGrid limit={12} />
             </Suspense>
         </>

@@ -9,5 +9,9 @@ const getAlbums = async (limit: number) => {
     const albums = await prisma.albums.findMany({ take: limit });
     return albums;
 };
+const getAlbumById = async (id: string) => {
+    const album = await prisma.albums.findUnique({ where: { id: +id } });
+    return album;
+};
 
-export { allAlbums, newArrivals, getAlbums };
+export { allAlbums, newArrivals, getAlbums, getAlbumById };

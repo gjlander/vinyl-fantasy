@@ -102,10 +102,10 @@ const Album = async ({ params }: { params: { id: string } }) => {
                             aria-label='component wrapper'
                         >
                             {/* w/o this div, the Spotify player gets ugly white corners in dark mode */}
-                            {/* <Spotify
+                            <Spotify
                                 link={spotify_url}
                                 className='w-full h-[600px] shadow-2xl'
-                            /> */}
+                            />
                         </div>
                     )}
                 </div>

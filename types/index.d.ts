@@ -1,5 +1,8 @@
-// namespace components {
-//     type AlbumCardProps = {
-
-//     };
-// }
+namespace components {
+    type AlbumGridProps = {
+        limit?: number;
+    };
+    type AlbumCardProps = {
+        album: albums;
+    };
+}

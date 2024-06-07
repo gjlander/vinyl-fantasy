@@ -1,12 +1,14 @@
-import { newArrivals } from '@/lib/data';
-import { AlbumGrid, Hero } from '@/lib/components';
+import { AlbumGrid, Hero, AlbumGridSkeleton } from '@/lib/components';
+import { Suspense } from 'react';
 export default function Home() {
     // console.log(newArrivals.length);
 
     return (
         <>
             <Hero />
-            <AlbumGrid albums={newArrivals} />
+            <Suspense fallback={<AlbumGridSkeleton length={12} />}>
+                <AlbumGrid limit={12} />
+            </Suspense>
         </>
     );
 }
